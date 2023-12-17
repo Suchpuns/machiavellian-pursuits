@@ -10,7 +10,7 @@ const io = new Server(3000, {
 console.log("starting");
 
 const onConnection = (socket: ISocket) => {
-  console.log("connected");
+  console.log("user connected");
   socket.on("disconnect", () => {
     console.log("user disconnected");
   });
