@@ -1,5 +1,6 @@
 import { Server } from "socket.io";
 import { ISocket } from "./interfaces";
+import { registerRoomHandlers } from "./sockets/roomHandler";
 
 const io = new Server(3000, {
   cors: {
@@ -14,6 +15,7 @@ const onConnection = (socket: ISocket) => {
   socket.on("disconnect", () => {
     console.log("user disconnected");
   });
+  registerRoomHandlers(io, socket);
 };
 
 io.on("connection", onConnection);

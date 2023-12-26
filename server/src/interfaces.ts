@@ -47,3 +47,7 @@ export interface Disconnect {
   userId: string;
   timeOutObj: NodeJS.Timeout;
 }
+
+export interface Error {
+  errMsg: string;
+}
