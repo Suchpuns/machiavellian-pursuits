@@ -4,7 +4,7 @@ import { registerRoomHandlers } from "./sockets/roomHandler";
 
 const io = new Server(3000, {
   cors: {
-    origin: "*",
+    origin: "*", // Change later when deploying
   },
 });
 

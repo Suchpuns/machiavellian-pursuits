@@ -74,7 +74,9 @@ export const registerRoomHandlers = (io: Server, socket: ISocket) => {
   const createRoom = (): void => {
     let roomCode: string = generateRoom(socket);
     io = io;
-    socket.emit("rooms", `created the room ${roomCode}`);
+    socket.join(roomCode);
+    console.log(`created the room ${roomCode}`);
+    socket.emit("c:room:create", `${roomCode}`);
   };
 
   const joinRoom = (roomId: string): void => {
@@ -82,9 +84,12 @@ export const registerRoomHandlers = (io: Server, socket: ISocket) => {
     let addRes: void | Error = addPlayer(player, roomId);
     if (addRes != undefined) {
       console.log(addRes.errMsg);
+      socket.emit("c:room:join", JSON.stringify({ error: "room not found" }));
       return;
     }
-    socket.emit("rooms", `joined the room ${roomId}`);
+    socket.join(roomId);
+    socket.to(roomId).emit("c:room:join", socket.username);
+    console.log(`${socket.username} joined the room ${roomId}`);
   };
 
   socket.on("room:create", createRoom);
