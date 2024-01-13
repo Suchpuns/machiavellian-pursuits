@@ -1,17 +1,26 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import io from "socket.io-client";
-
-const socket = io(import.meta.env.VITE_BE_URL, { autoConnect: false });
+import { socket } from "../socket";
 
 const LandingStub = () => {
   const [username, setUsername] = useState<string>("");
+  const [code, setCode] = useState<string>("");
   const navigate = useNavigate();
 
+  const joinEvent = (val: string) => {
+    navigate(`/waiting/${val}`);
+  };
+
+  // Registering events
   useEffect(() => {
-    socket.on("c:room:create", (msg: string) => {
-      navigate(`/waiting/${msg}`);
-    });
+    socket.on("c:room:create", joinEvent);
+
+    socket.on("c:room:join", joinEvent);
+
+    return () => {
+      socket.off("c:room:create");
+      socket.off("c:room:join");
+    };
   });
 
   const createRoom = async (e: React.MouseEvent) => {
@@ -24,23 +33,19 @@ const LandingStub = () => {
   const joinRoom = async (e: React.MouseEvent) => {
     e.preventDefault();
     socket.auth = { username: username };
-    console.log("not done yet");
-  };
-
-  const handleUsernameField = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUsername(e.target.value);
+    socket.connect();
+    socket.emit("room:join", code);
   };
 
   return (
     <>
       <h1>Landing Stub</h1>
-      <input onChange={handleUsernameField}></input>
-      {username != "" && (
-        <>
-          <button onClick={createRoom}> Create game</button>
-          <button onClick={joinRoom}>Join game</button>
-        </>
-      )}
+      <p>Username</p>
+      <input onChange={e => setUsername(e.target.value)}></input>
+      <p>Room code</p>
+      <input onChange={e => setCode(e.target.value)}></input>
+      <p>{username != "" && <button onClick={createRoom}> Create game</button>}</p>
+      {username != "" && code.length == 4 && <button onClick={joinRoom}>Join game</button>}
     </>
   );
 };
