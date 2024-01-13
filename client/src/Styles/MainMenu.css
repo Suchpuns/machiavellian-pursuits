@@ -1,0 +1,10 @@
+.menu-container {
+    display: flex; /* apparently this makes the children components centered*/
+    flex-direction: column; /* Set to row to align buttons horizontally */
+    justify-content: center;
+    align-items: center;
+    background-image: url("../Resources/Other/MainMenu.png");
+    background-size: auto 100%;
+    height: 100vh;
+    width: 100vw;
+}
