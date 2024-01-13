@@ -1,15 +1,7 @@
-import MenuButton from "./Components/MenuButton.tsx";
-import "./Styles/MainMenu.css";
+import MainMenu from "./Components/MainMenu.tsx";
 
 function App() {
-  return (
-    <div className="menu-container">
-      <MenuButton text="Create Room" />
-      <MenuButton text="Join Room" />
-      <MenuButton text="Rules" />
-      <MenuButton text="Settings" />
-    </div>
-  );
+  return MainMenu();
 }
 
 export default App;
