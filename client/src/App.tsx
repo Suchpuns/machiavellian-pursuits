@@ -1,7 +1,6 @@
-import LandingStub from "./Components/LandingStub.tsx";
-import WaitingRoom from "./Components/WaitingRoom.tsx";
+import LandingStub from "./Components/LandingStub";
+import WaitingRoom from "./Components/WaitingRoom";
 import { Router, Routes, Route } from "react-router-dom";
-import "./App.css";
 
 function App() {
   return (
