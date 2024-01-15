@@ -1,14 +1,19 @@
 /* MenuButton.css */
 .menu-button {
-    padding: 10px;
-    font-size: 23px;
-    /* if first font not availlable, defaults to sans serif*/
-    font-family: 'Gill Sans MT', sans-serif;
-    background: url('../Resources/Other/Button.png');
-    background-size: 100% 100%;
-    color: #ffffff;
-    cursor: pointer;
-    margin: 25px;
-    width: 350px;
-    height: 50px;
+  padding: 10px;
+  font-size: 23px;
+  /* if first font not availlable, defaults to sans serif*/
+  font-family: "Gill Sans MT", sans-serif;
+  background: url("../Resources/Other/Button.png");
+  background-size: 100% 100%;
+  cursor: pointer;
+  margin: 25px;
+  width: 350px;
+  height: 50px;
+  border: 0px;
+  color: white;
+}
+
+.menu-button:hover {
+  color: grey;
 }
