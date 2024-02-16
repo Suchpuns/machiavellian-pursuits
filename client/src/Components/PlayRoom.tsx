@@ -54,7 +54,7 @@ const PlayRoom = () => {
         onChange={(e) => setCode(e.target.value)}
       ></input>
       <p>
-        {username != "" && (
+        {username != "" && username.length <= 10 && (
           <MenuButton
             text="Create Game"
             onClick={createRoom}
@@ -62,7 +62,7 @@ const PlayRoom = () => {
             size="small"
           />
         )}
-        {username != "" && code.length == 4 && (
+        {username != "" && username.length <= 10 && code.length == 4 && (
           <MenuButton
             text="Join Game"
             onClick={joinRoom}
