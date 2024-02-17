@@ -2,10 +2,17 @@ import "../Styles/MenuButton.css";
 
 interface Props {
   text: String;
+  onClick: (e: React.MouseEvent) => void;
+  color: string;
+  size?: string;
 }
 
-function MenuButton({ text }: Props) {
-  return <button className="menu-button">{text}</button>;
-}
+const MenuButton: React.FC<Props> = ({ text, onClick, color, size }) => {
+  return (
+    <button className={`menu-button ${color} ${size}`} onClick={onClick}>
+      {text}
+    </button>
+  );
+};
 
 export default MenuButton;

@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 // TODO Change later
 import { Player } from "../interfaces";
 import "../Styles/WaitingRoom.css";
+import Box from "./Box.tsx";
+import MenuButton from "./MenuButton.tsx";
 
 const WaitingRoom = () => {
   const { code } = useParams();
@@ -38,15 +40,32 @@ const WaitingRoom = () => {
 
   return (
     <>
-      <div className="code-title">
-        <h1>Room Code: {code}</h1>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div className="menu-container">
+          <Box text={`Room Code: ${code}`} type="title" />
+          <div className="wait-container">
+            {players.map((player) => (
+              <h2 key={player.socketId} className="wait-item">
+                <Box text={player.name} type="icon" />
+              </h2>
+            ))}
+          </div>
+          <p>
+            <MenuButton
+              text="Leave"
+              onClick={leaveWaitingRoom}
+              color="red"
+              size="small"
+            />
+          </p>
+        </div>
       </div>
-      <p>
-        <button onClick={leaveWaitingRoom}>Leave</button>
-      </p>
-      {players.map(player => (
-        <h1 key={player.socketId}>{player.name}</h1>
-      ))}
     </>
   );
 };
