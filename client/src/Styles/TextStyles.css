@@ -10,6 +10,8 @@
     font-size: 20px;
     color: #000;
     text-align: center;
+    width: 50%;
     font-family: 'Gill Sans MT', sans-serif;
     text-shadow: 0 0 10px #FFF, 0 0 20px #FFF, 0 0 30px #FFF;
+    max-width: 1700px;
 }

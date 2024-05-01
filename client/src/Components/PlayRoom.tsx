@@ -14,6 +14,10 @@ const PlayRoom = () => {
     navigate(`/waiting/${val}`);
   };
 
+  const toMainMenu = () => {
+    navigate("/");
+  };
+
   // Registering events
   useEffect(() => {
     socket.on("c:room:create", joinEvent);
@@ -53,8 +57,8 @@ const PlayRoom = () => {
         className="input-box"
         onChange={(e) => setCode(e.target.value)}
       ></input>
-      <p>
-        {username != "" && username.length <= 10 && (
+      <div>
+        {username.length >= 3 && username.length <= 10 && (
           <MenuButton
             text="Create Game"
             onClick={createRoom}
@@ -62,7 +66,7 @@ const PlayRoom = () => {
             size="small"
           />
         )}
-        {username != "" && username.length <= 10 && code.length == 4 && (
+        {username.length >= 3 && username.length <= 10 && code.length == 4 && (
           <MenuButton
             text="Join Game"
             onClick={joinRoom}
@@ -70,7 +74,8 @@ const PlayRoom = () => {
             size="small"
           />
         )}
-      </p>
+      </div>
+      <MenuButton text="Back" onClick={toMainMenu} color="red" size="small" />
     </div>
   );
 };

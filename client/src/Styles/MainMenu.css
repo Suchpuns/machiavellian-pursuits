@@ -5,7 +5,7 @@
     align-items: center;
     background-position: center;
     background-image: url("../Resources/Other/MainMenu.png");
-    background-size: auto 100%;
+    background-size: cover;
     height: 100vh;
     width: 100vw;
 }
