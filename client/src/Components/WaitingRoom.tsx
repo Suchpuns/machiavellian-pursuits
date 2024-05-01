@@ -4,9 +4,9 @@ import { socket } from "../socket";
 import { useEffect, useState } from "react";
 // TODO Change later
 import { Player } from "../interfaces";
-import "../Styles/WaitingRoom.css";
-import Box from "./Box.tsx";
-import MenuButton from "./MenuButton.tsx";
+import "../styles/waitingRoom.css";
+import Box from "./Box";
+import MenuButton from "./MenuButton";
 
 const WaitingRoom = () => {
   const { code } = useParams();
