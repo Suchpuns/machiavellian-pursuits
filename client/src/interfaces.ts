@@ -1,11 +1,3 @@
-import { Socket } from "socket.io";
-
-export interface ISocket extends Socket {
-  userId?: string;
-  username: string;
-  roomId?: string;
-}
-
 export interface Card {
   type: string;
   name: string;
@@ -14,11 +6,11 @@ export interface Card {
 export interface Resource extends Card {}
 
 export interface Action extends Card {
-  effect: (r: Room, playerId: string, params: any[]) => void;
+  effect: (r: Room, playerId: string, params: unknown[]) => void;
 }
 
 export interface Goal {
-  points: Number;
+  points: number;
   completed: false;
 }
 
@@ -28,15 +20,15 @@ export interface Player {
   name: string;
   hand: Card[];
   storage: Card[];
-  points: Number;
+  points: number;
   goals: Goal[];
 }
 
 export interface Room {
   id: string; // room id/code
   players: Player[];
-  turn: Number; // turn is an index in the players array. Indicates which player is playing in the current turn
-  start: Boolean;
+  turn: number; // turn is an index in the players array. Indicates which player is playing in the current turn
+  start: boolean;
 }
 
 export interface Deck {

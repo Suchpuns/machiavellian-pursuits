@@ -1,0 +1,39 @@
+/* MenuButton.css */
+.menu-button {
+  padding: 10px;
+  font-size: 23px;
+  /* if first font not availlable, defaults to sans serif*/
+  font-family: "Gill Sans MT", sans-serif;
+  cursor: pointer;
+  margin: 25px;
+  width: 350px;
+  height: 50px;
+  border: 0px;
+  color: white;
+}
+
+.menu-button:hover {
+  color: grey;
+}
+
+.small {
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.yellow {
+  background: url("../assets/other/yellowButton.png");
+  background-size: 100% 100%;
+}
+
+.red {
+  background: url("../assets/other/redButton.png");
+  background-size: 100% 100%;
+}
+
+.green {
+  background: url("../assets/other/greenButton.png");
+  background-size: 100% 100%;
+}
