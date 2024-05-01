@@ -1,8 +1,8 @@
-import MenuButton from "../Components/MenuButton.tsx";
-import "../Styles/MainMenu.css";
+import MenuButton from "./MenuButton.tsx";
+import "../styles/mainMenu.css";
 import { useNavigate } from "react-router-dom";
 
-function MainMenu() {
+const MainMenu = () => {
   const navigate = useNavigate();
 
   const rulesHandleClick = async (e: React.MouseEvent) => {
@@ -24,6 +24,6 @@ function MainMenu() {
       <MenuButton text="Settings" onClick={genericHandleClick} color="yellow" />
     </div>
   );
-}
+};
 
 export default MainMenu;

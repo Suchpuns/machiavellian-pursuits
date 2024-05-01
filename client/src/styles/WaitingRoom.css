@@ -1,5 +1,5 @@
 .code-title {
-  background: url("../Resources/Other/Title.png");
+  background: url("../assets/other/title.png");
   width: 270px;
   height: 41px;
   font-size: 27px;
@@ -35,7 +35,7 @@
   font-size: 10px;
   align-items: center;
   justify-content: center;
-  background: url("../Resources/Other/Playericon.png");
+  background: url("../assets/other/playericon.png");
   background-size: 100% 100%;
   box-sizing: border-box;
 }

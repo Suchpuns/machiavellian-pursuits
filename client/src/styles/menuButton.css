@@ -24,16 +24,16 @@
 }
 
 .yellow {
-  background: url("../Resources/Other/YellowButton.png");
+  background: url("../assets/other/yellowButton.png");
   background-size: 100% 100%;
 }
 
 .red {
-  background: url("../Resources/Other/RedButton.png");
+  background: url("../assets/other/redButton.png");
   background-size: 100% 100%;
 }
 
 .green {
-  background: url("../Resources/Other/GreenButton.png");
+  background: url("../assets/other/greenButton.png");
   background-size: 100% 100%;
 }

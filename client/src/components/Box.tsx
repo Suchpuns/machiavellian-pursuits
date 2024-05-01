@@ -1,5 +1,4 @@
-import "../Styles/Box.css";
-import React from "react";
+import "../styles/box.css";
 
 interface Props {
   text: string;

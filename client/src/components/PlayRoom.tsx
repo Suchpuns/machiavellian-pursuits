@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { socket } from "../socket";
-import "../Styles/TextStyles.css";
-import "../Styles/InputBox.css";
+import "../styles/textStyles.css";
+import "../styles/inputBox.css";
 import MenuButton from "./MenuButton";
 
 const PlayRoom = () => {

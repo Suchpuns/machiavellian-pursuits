@@ -1,0 +1,41 @@
+.code-title {
+  background: url("../assets/other/title.png");
+  width: 270px;
+  height: 41px;
+  font-size: 27px;
+  font-family: "Gill Sans MT", "sans-serif";
+  text-align: center;
+  background-size: 100% 100%;
+}
+
+.players-div {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.player-box {
+  background-color: #36deef;
+  opacity: 80%;
+}
+
+.wait-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center; /* Adjust as needed */
+  gap: 30px;
+}
+
+.wait-item {
+  display: flex;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  font-size: 10px;
+  align-items: center;
+  justify-content: center;
+  background: url("../assets/other/playericon.png");
+  background-size: 100% 100%;
+  box-sizing: border-box;
+}

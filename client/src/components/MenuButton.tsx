@@ -1,7 +1,7 @@
-import "../Styles/MenuButton.css";
+import "../styles/menuButton.css";
 
 interface Props {
-  text: String;
+  text: string;
   onClick: (e: React.MouseEvent) => void;
   color: string;
   size?: string;
