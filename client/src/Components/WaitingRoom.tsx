@@ -4,7 +4,7 @@ import { socket } from "../socket";
 import { useEffect, useState } from "react";
 // TODO Change later
 import { Player } from "../interfaces";
-import "../styles/waitingRoom.css";
+import "../Styles/WaitingRoom.css";
 import Box from "./Box";
 import MenuButton from "./MenuButton";
 
@@ -50,19 +50,14 @@ const WaitingRoom = () => {
         <div className="menu-container">
           <Box text={`Room Code: ${code}`} type="title" />
           <div className="wait-container">
-            {players.map((player) => (
+            {players.map(player => (
               <h2 key={player.socketId} className="wait-item">
                 <Box text={player.name} type="icon" />
               </h2>
             ))}
           </div>
           <p>
-            <MenuButton
-              text="Leave"
-              onClick={leaveWaitingRoom}
-              color="red"
-              size="small"
-            />
+            <MenuButton text="Leave" onClick={leaveWaitingRoom} color="red" size="small" />
           </p>
         </div>
       </div>

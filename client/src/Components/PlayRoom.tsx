@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { socket } from "../socket";
-import "../styles/textStyles.css";
-import "../styles/inputBox.css";
+import "../Styles/TextStyles.css";
+import "../Styles/InputBox.css";
 import MenuButton from "./MenuButton";
 
 const PlayRoom = () => {
@@ -44,31 +44,15 @@ const PlayRoom = () => {
     <div className="menu-container">
       <h1 className="title-text">Join or Create a Room</h1>
       <p className="paragraph-text">Username</p>
-      <input
-        className="input-box"
-        onChange={(e) => setUsername(e.target.value)}
-      ></input>
+      <input className="input-box" onChange={e => setUsername(e.target.value)}></input>
       <p className="paragraph-text">Room code</p>
-      <input
-        className="input-box"
-        onChange={(e) => setCode(e.target.value)}
-      ></input>
+      <input className="input-box" onChange={e => setCode(e.target.value)}></input>
       <p>
         {username != "" && username.length <= 10 && (
-          <MenuButton
-            text="Create Game"
-            onClick={createRoom}
-            color="yellow"
-            size="small"
-          />
+          <MenuButton text="Create Game" onClick={createRoom} color="yellow" size="small" />
         )}
         {username != "" && username.length <= 10 && code.length == 4 && (
-          <MenuButton
-            text="Join Game"
-            onClick={joinRoom}
-            color="green"
-            size="small"
-          />
+          <MenuButton text="Join Game" onClick={joinRoom} color="green" size="small" />
         )}
       </p>
     </div>

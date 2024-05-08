@@ -1,4 +1,4 @@
-import "../styles/menuButton.css";
+import "../Styles/MenuButton.css";
 
 interface Props {
   text: string;

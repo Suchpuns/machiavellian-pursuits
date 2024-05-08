@@ -1,4 +1,4 @@
-import "../styles/box.css";
+import "../Styles/Box.css";
 
 interface Props {
   text: string;

@@ -1,11 +1,11 @@
 import MenuButton from "./MenuButton.tsx";
-import "../styles/mainMenu.css";
+import "../Styles/MainMenu.css";
 import { useNavigate } from "react-router-dom";
 
 const MainMenu = () => {
   const navigate = useNavigate();
 
-  const genericHandleClick = () => {};
+  const genericHandleClick = () => { };
 
   const playHandleClick = async (e: React.MouseEvent) => {
     e.preventDefault();
@@ -19,6 +19,6 @@ const MainMenu = () => {
       <MenuButton text="Settings" onClick={genericHandleClick} color="yellow" />
     </div>
   );
-}
+};
 
 export default MainMenu;

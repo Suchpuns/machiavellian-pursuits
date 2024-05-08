@@ -1,6 +1,6 @@
-import PlayRoom from "./components/PlayRoom";
-import MainMenu from "./components/MainMenu";
-import WaitingRoom from "./components/WaitingRoom";
+import PlayRoom from "./Components/PlayRoom";
+import MainMenu from "./Components/MainMenu";
+import WaitingRoom from "./Components/WaitingRoom";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
